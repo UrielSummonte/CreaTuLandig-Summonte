@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../../componentes/Layout/Layout'
 
-const MiCuenta = () => {
+const SignIn = () => {
   return (
-    <Layout>MiCuenta</Layout>
+    <Layout>SignIn</Layout>
   )
 }
 
-export default MiCuenta
+export default SignIn

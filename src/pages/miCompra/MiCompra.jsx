@@ -1,8 +1,9 @@
 import React from 'react'
+import Layout from '../../componentes/Layout/Layout'
 
 const MiCompra = () => {
   return (
-    <div>MiCompra</div>
+    <Layout>MiCompra</Layout>
   )
 }
 
