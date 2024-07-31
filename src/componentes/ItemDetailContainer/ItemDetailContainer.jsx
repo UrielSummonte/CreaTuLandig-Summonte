@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
     getOneProduct(id)
       .then((data) => setProducto(data))
       .finally(() => setLoading(false))
-  }, [])
+  }, [id])
 
   if (loading) {
     return <h2>Cargando...</h2>;
