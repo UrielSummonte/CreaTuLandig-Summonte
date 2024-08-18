@@ -113,7 +113,9 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li className="ml-7">
-            <CartWidget />
+            <Link to="/cart">
+              <CartWidget />
+            </Link>
           </li>
         </ul>
       </nav>

@@ -10,7 +10,7 @@ const Item = ({ e }) => {
         src={e.imagen}
         alt={e.titulo}
       />
-      <p className="text-gray-700 text-base mb-2">{e.precio}</p>
+      <p className="text-gray-700 text-base mb-2">${e.precio}</p>
       <p className="text-gray-600 text-sm mb-4">{e.categoria.join(", ")}</p>
       <div className="flex">
         <Link

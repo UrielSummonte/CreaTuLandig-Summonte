@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react"
 
 const Layout = ({ children }) => {
-  return (
-    <div className='flex flex-col items-center mt-4'>
-      { children }
-    </div>
-  )
+  return <div className="flex flex-col items-center mt-4">{children}</div>
 }
 
 export default Layout
