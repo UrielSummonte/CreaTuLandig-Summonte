@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react"
 import { db } from "../../services/firebaseConfig"
 import { addDoc, collection } from "firebase/firestore"
 import { CartContext } from "../../context/cartContext"
+import { Link } from "react-router-dom"
 
 const Checkout = () => {
   const [nombre, setNombre] = useState("")
@@ -12,7 +13,6 @@ const Checkout = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const { cart, setCart } = useContext(CartContext)
-  console.log("checart", cart)
 
   const formatedOrder = {
     cart: cart,
@@ -37,6 +37,12 @@ const Checkout = () => {
       <div className="flex flex-col items-center justify-center mt-40">
         <h3 className="text-2xl font-bold">Gracias por tu compra!</h3>
         <h3 className="text-2xl font-bold">El id de tu compra es: {orden} </h3>
+        <Link
+          to="/"
+          className="h-12 w-64 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center mt-4"
+        >
+          Comenzar una nueva compra
+        </Link>
       </div>
     );
   }

@@ -28,10 +28,11 @@ const ItemCount = ({ addToCart, producto }) => {
       <button
         className="h-12 w-12 bg-blue-300 flex items-center justify-center"
         onClick={handleDecrease}
+        disabled={producto.stock <= 0}
       >
         <IoMdRemove />
       </button>
-      <div className="h-12 w-12 bg-gray-400 flex items-center justify-center">
+      <div className="h-12 w-12 bg-gray-300 flex items-center justify-center">
         <span>{count}</span>
       </div>
       <button

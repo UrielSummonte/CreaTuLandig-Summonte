@@ -90,7 +90,7 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink
-              to="/mi-compra"
+              to="/cart"
               className={({ isActive, isPending, isTransitioning }) =>
                 `relative ${isPending ? "text-red-500" : "text-black"} ${
                   isTransitioning ? "view-transition" : ""

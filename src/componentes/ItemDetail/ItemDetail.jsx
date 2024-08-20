@@ -1,15 +1,28 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import ItemCount from "../ItemCount/ItemCount"
 import { CartContext } from "../../context/cartContext"
 import { Link } from "react-router-dom"
 
 const ItemDetail = ({ producto }) => {
-  const { addToCart, isInCart } = useContext(CartContext)
+  const { addToCart, isInCart, cart } = useContext(CartContext)
 
   const [productDetail, setProductDetail] = useState(producto)
+  
 
   const { titulo, precio, categoria, descripcion, imagen, stock } =
     productDetail
+
+    const [cantidad, setCantidad] = useState(stock)
+
+    useEffect(() => {
+        cart.forEach(element => {
+          if(element.id === producto.id){
+            setCantidad(element.stock)
+          }
+        });      
+    }, [cart])
+    
+    
 
   return (
     <div className="max-w-2xl rounded overflow-hidden shadow-lg p-6 bg-white">
@@ -26,7 +39,11 @@ const ItemDetail = ({ producto }) => {
       <p className="text-gray-900 text-xl font-semibold mb-4">
         ${precio.toFixed(2)}
       </p>
-      <p className="text-gray-500 text-sm mb-3">Stock: {stock} disponibles</p>
+      
+      
+      
+      <p className="text-gray-500 text-sm mb-3">Stock: {cantidad} disponibles</p>
+    
       {isInCart(productDetail.id) ? (
         <Link
           to="/cart"
